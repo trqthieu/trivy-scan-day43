@@ -25,6 +25,7 @@ jobs:
 
       - name: Run Trivy for Github Security
         uses: aquasecurity/trivy-action@master
+        if: always()
         with:
           image-ref: myapp:${{ github.sha }}
           format: 'sarif'
